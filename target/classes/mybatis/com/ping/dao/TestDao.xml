@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--   
+    namespace：必须与对应的接口全类名一致  
+    id:必须与对应接口的某个对应的方法名一致  
+      
+ -->  
+<mapper namespace="com.ping.dao.TestDao">  
+
+<resultMap id="Test" type="com.ping.entity.Test">
+	<result column="id" property="id"/> 
+	<result column="name" property="name"/>
+</resultMap>
+
+     <!-- mybsits_config中配置的alias类别名,也可直接配置resultType为类路劲 -->    
+    <select id="queryById" parameterType="int" resultType="Test">  
+        select * from test where id = #{id}
+    </select>  
+    
+    <insert id="insert">
+    	insert into test (name) values (#{name})
+    </insert>
+    
+    
+</mapper>  
