@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ping.entity.DataObjectAttribute;
 import com.ping.entity.Test;
+import com.ping.service.DataObjectAttributeService;
 import com.ping.service.TestService;
 
 @Controller
@@ -18,6 +19,9 @@ public class Hello {
 	
 	@Autowired
 	private TestService testService;
+	
+	@Autowired
+	private DataObjectAttributeService dataObjectAttributeService;
 	
 //	@RequestMapping(value="/hello",produces = "plain/text; charset=UTF-8")
 	@RequestMapping("/hello")
@@ -61,9 +65,10 @@ public class Hello {
 	@RequestMapping("/onePltDatas")
 	@ResponseBody
 	public Object onePltDatas(HttpServletRequest request,DataObjectAttribute data){
-		int appKey = Integer.parseInt(request.getParameter("appKey"));
-		String pltCode = request.getParameter("pltCode");
-		return testService.objectAttribute(data);
+		data.setPageNo(1);
+		data.setPageSize(15);
+		//return testService.objectAttribute(data);
+		return dataObjectAttributeService.(data);
 	}
 
 }

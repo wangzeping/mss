@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,16 +16,18 @@ import com.ping.entity.DataObjectAttribute;
 import com.ping.entity.Test;
 import com.ping.service.TestService;
 
-@Service("userService")
+//@Service("userService")
+@Service
 public class TestServiceImpl implements TestService{
 
-	@Resource
+	//@Resource
+	@Autowired
 	private TestDao testDao;
 	
-	@Resource
+	@Autowired
 	private DataObjectDao dataObjectDao;
 	
-	@Resource
+	@Autowired
 	private DataObjectAttributeDao dataObjectAttributeDao;
 	
 	public Test query(Integer id) {
