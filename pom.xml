@@ -18,12 +18,12 @@
   </properties>
   
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+    	<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
     
     <dependency>
         <groupId>javax.servlet</groupId>
@@ -277,8 +277,37 @@
             <artifactId>commons-codec</artifactId>  
             <version>1.9</version>  
         </dependency>  
+        
+        <!-- spring redis集成 -->
+        <dependency>  
+	    <groupId>org.springframework.data</groupId>  
+	        <artifactId>spring-data-redis</artifactId>  
+	        <version>1.4.1.RELEASE</version>  
+	    </dependency>  
+	    <dependency>  
+	        <groupId>redis.clients</groupId>  
+	        <artifactId>jedis</artifactId>  
+	        <version>2.6.2</version>  
+	    </dependency>  
+	    <dependency>  
+		        <groupId>org.apache.commons</groupId>  
+		        <artifactId>commons-lang3</artifactId>  
+		        <version>3.3.2</version>  
+		</dependency>  
+
+        
   </dependencies>
   <build>
     <finalName>mss</finalName>
+    <plugins>  
+      <plugin>  
+        <groupId>org.apache.maven.plugins</groupId>  
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>  
+          <source>1.7</source>  
+          <target>1.7</target>  
+        </configuration>  
+      </plugin>  
+    </plugins>
   </build>
 </project>
