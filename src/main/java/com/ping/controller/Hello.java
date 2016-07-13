@@ -12,6 +12,7 @@ import com.ping.entity.DataObjectAttribute;
 import com.ping.entity.Test;
 import com.ping.service.DataObjectAttributeService;
 import com.ping.service.TestService;
+import com.ping.util.result.PageResult;
 
 @Controller
 @RequestMapping("/test")
@@ -68,7 +69,10 @@ public class Hello {
 		data.setPageNo(1);
 		data.setPageSize(15);
 		//return testService.objectAttribute(data);
-		return dataObjectAttributeService.(data);
+		new PageResult<DataObjectAttribute>();
+		
+		
+		return dataObjectAttributeService.findListEntity(data);
 	}
 
 }

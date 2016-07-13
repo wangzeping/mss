@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ping.dao.DataObjectAttributeDao">
+	
+	<!-- 
+	<resultMap id="DataObject" type="com.ping.entity.DataObject">
+		<result column="app_key" property="appKey"/> 
+		<result column="plat_code" property="platCode"/>
+		<result column="data_object" property="dataObject"/>
+		<result column="data_table" property="dataTable"/>
+		<result column="client_table" property="clientTable"/>
+		<result column="object_name" property="objectName"/>
+		<result column="created" property="created"/>
+		<result column="modified" property="modified"/>
+	</resultMap>
+ -->
+	<select id="queryByPlt" resultType="DataObjectAttribute">
+		SELECT 
+		app_key as appKey,plat_code as platCode,data_object as dataObject,attribute_type as attributeType,attribute_desc as attributeDesc,column_name as columnName from syo_data_object_attribute 
+		where app_key = #{appKey} and plat_code = #{platCode}
+		
+		<if test="pageSize != null and pageSize != null and pageNo != null and pageNo != ''">
+			limit ${(pageNo-1) * pageSize},${pageSize}
+		</if>
+		
+	</select>
+	
+	<select id="findList" resultType="DataObjectAttribute">
+		SELECT 
+		app_key as appKey,plat_code as platCode,data_object as dataObject,attribute_type as attributeType,attribute_desc as attributeDesc,column_name as columnName from syo_data_object_attribute 
+		where app_key = #{appKey} and plat_code = #{platCode}
+		
+		<if test="pageSize != null and pageSize != null and pageNo != null and pageNo != ''">
+			limit ${(pageNo-1) * pageSize},${pageSize}
+		</if>
+		
+	</select>
+</mapper> 
