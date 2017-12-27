@@ -62,7 +62,7 @@
         <!-- 
         <property name="dataSource" ref="dataSource"/>
         <property name="typeAliasesPackage" value="com.saicmaxus.saicmg"/>
-        <property name="typeAliasesSuperType" value="com.saicmaxus.saicmg.common.persistence.BaseEntity"/>
+        <property name="typeAliasesSuperType" value="com.ze.ping.common.persistence.BaseEntity"/>
         <property name="mapperLocations" value="classpath:/mappings/**/*.xml"/>
 		<property name="configLocation" value="classpath:/mybatis-config.xml"></property>
          -->
